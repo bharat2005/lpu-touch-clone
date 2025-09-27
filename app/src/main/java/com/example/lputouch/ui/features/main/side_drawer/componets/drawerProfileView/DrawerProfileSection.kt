@@ -106,7 +106,7 @@ fun DrawerProfileSection(navController: NavController, drawerState: DrawerState)
                 textAlign = TextAlign.Center
             )
 
-            Text("12413923", fontFamily = Nunito, fontWeight = FontWeight.Medium, fontSize = 14.2.sp,
+            Text("12345678", fontFamily = Nunito, fontWeight = FontWeight.Medium, fontSize = 14.2.sp,
                 textAlign = TextAlign.Center,
                 color = Color(0xFF1C1C1C),
                 modifier = Modifier.padding(vertical = 2.dp)

@@ -19,15 +19,15 @@ object ProfileDetailsList {
                     ),
                     ProfileDots(
                         name = "Permanent Address",
-                        value = "Visora, Gadchiroli - 441207 - Distt: Gadchiroli - (Maharashtra) - India"
+                        value = "Arosiudi, Ilorihcdaours - 411290 - Distt: Ilorihcdag - (Maharashtra) - India"
                     ),
                     ProfileDots(
                         name = "Correspondence Address",
-                        value = "Visora, Gadchiroli - 441207 - Distt: Gadchiroli - (Maharashtra) - India"
+                        value = "Arosiudi, Ilorihcdaours - 411290 - Distt: Ilorihcdag - (Maharashtra) - India"
                     ),
                     ProfileDots(
                         name = "Contact No.",
-                        value = "9021833029"
+                        value = "1234567890"
                     ),
                     ProfileDots(
                         name = "Email",
@@ -60,7 +60,7 @@ object ProfileDetailsList {
                     ),
                     ProfileDots(
                         name = "Section",
-                        value = "K24CT"
+                        value = "K24XX"
                     ),
                     ProfileDots(
                         name = "TPC",
@@ -72,11 +72,11 @@ object ProfileDetailsList {
                 detailList = listOf(
                     ProfileDots(
                         name = "Hostel",
-                        value = "Boys Hostel-02- A606-Bed A (Std Non-AC 4 Seater)"
+                        value = "Boys Hostel-99- A999-Bed X (Std AC 9 Seater)"
                     ),
                     ProfileDots(
                         name = "Warden",
-                        value = "22332::Subhash Chand (9888598705)"
+                        value = "12390::Subasha Chandu (9280293709)"
                     ),
                 )),
         )

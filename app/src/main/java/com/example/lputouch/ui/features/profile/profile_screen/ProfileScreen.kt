@@ -74,7 +74,7 @@ data class FuckOff(
 val drawerDetails: List<FuckOff> = listOf(
     FuckOff("Name:", "Deshmukh Bharat Vasanta"),
     FuckOff("Program:", "P132: B.Tech. (Computer Science and Engineering) (2024)"),
-    FuckOff("Hostel:", "Boys Hostel-02- A606-Bed A (Std Non-AC 4 Seater)"),
+    FuckOff("Hostel:", "Boys Hostel-99- A999-Bed X (Std AC 9 Seater)"),
 )
 
 @Composable

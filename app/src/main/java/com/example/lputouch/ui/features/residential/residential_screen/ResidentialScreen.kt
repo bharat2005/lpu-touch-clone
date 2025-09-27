@@ -66,6 +66,59 @@ fun ResidentialScreen(navController: NavController) {
                             handler?.proceed()
                         }
 
+                        override fun onPageFinished(view: WebView, url: String) {
+                            super.onPageFinished(view, url)
+
+                            val script = """
+                    javascript:(function() {
+                    
+                        const slipElement = document.getElementById('ctl00_cphHeading_lblSlipNo');
+                        if (slipElement) {
+                            slipElement.textContent = '00000000';
+                        }
+                        
+                        const imageElement = document.getElementById('ctl00_cphHeading_GridView1_ctl02_Image1');
+                        if (imageElement) {
+                            imageElement.src = 'https://tse2.mm.bing.net/th/id/OIP.FYA1sc0wKr42RwjQJ5_GTAHaLM?rs=1&pid=ImgDetMain&o=7&rm=3';
+                        }
+                        
+                        const regElement = document.getElementById('ctl00_cphHeading_lblRegNo');
+                        if (regElement) {
+                            regElement.textContent = '12345678';
+                        }
+                        
+                        const addressElement = document.getElementById('ctl00_cphHeading_lblAddress');
+                        if (addressElement) {
+                            addressElement.textContent = 'ArosafiF City :Ilorrichdag120393 District :Ilorrichdag State :MaharashtraCountry :India';
+                        }
+                        
+                        const hostelEelemt = document.getElementById('ctl00_cphHeading_lblHostel');
+                        if (hostelEelemt) {
+                            hostelEelemt.textContent = 'Boys Hostel-99';
+                        }
+                        
+                        const seaterEleemnt = document.getElementById('ctl00_cphHeading_lblSeater');
+                        if (seaterEleemnt) {
+                            seaterEleemnt.textContent = 'Std AC 9 Seater';
+                        }
+                        
+                        const roomElement = document.getElementById('ctl00_cphHeading_lblRoomNo');
+                        if (roomElement) {
+                            roomElement.textContent = 'A999-Bed X';
+                        }
+                        
+                        const messNameElement = document.getElementById('ctl00_cphHeading_lblMessName');
+                        if (messNameElement) {
+                            messNameElement.textContent = 'Same Hostel Mess';
+                        }
+        
+                    })();
+                """.trimIndent()
+                            view.evaluateJavascript(script, null)
+                        }
+
+
+
                     }
                     webView
                 },
