@@ -49,9 +49,7 @@ fun OptionItem(tile: TileOption, navController: NavController) {
             .width(114.dp)
             .clickable(
                 onClick = {
-                    navController.navigate("mess_screen") {
-                        launchSingleTop = true
-                    }
+
                 },
                 indication = null,
                 interactionSource = remember { MutableInteractionSource() }

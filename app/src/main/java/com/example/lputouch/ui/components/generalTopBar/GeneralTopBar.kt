@@ -36,7 +36,9 @@ fun GeneralTopbar(navController: NavController, title : String, notification: Bo
         },
         actions = {
             if(notification == true){
-            IconButton(onClick = {navController.navigate("settings")}) {
+            IconButton(onClick = {
+
+            }) {
                 Icon(Icons.Default.DateRange, contentDescription = null)
             }
             }
