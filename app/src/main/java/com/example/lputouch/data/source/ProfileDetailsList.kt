@@ -72,7 +72,7 @@ object ProfileDetailsList {
                 detailList = listOf(
                     ProfileDots(
                         name = "Hostel",
-                        value = "null"
+                        value = "Boys Hostel-02- A606-Bed A (Std Non-AC 4 Seater)"
                     ),
                     ProfileDots(
                         name = "Warden",

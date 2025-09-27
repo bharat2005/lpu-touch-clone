@@ -60,7 +60,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.lputouch.R
 import androidx.navigation.compose.rememberNavController
-import com.example.lputouch.data.local.getMyDetails
 import com.example.lputouch.data.source.ProfileDetailsList
 import com.example.lputouch.ui.components.LoadingOverlay.LoadingOverlay
 import com.example.lputouch.ui.features.profile.profile_screen.components.ProfileDragHandler
@@ -75,7 +74,7 @@ data class FuckOff(
 val drawerDetails: List<FuckOff> = listOf(
     FuckOff("Name:", "Deshmukh Bharat Vasanta"),
     FuckOff("Program:", "P132: B.Tech. (Computer Science and Engineering) (2024)"),
-    FuckOff("Hostel:", "null"),
+    FuckOff("Hostel:", "Boys Hostel-02- A606-Bed A (Std Non-AC 4 Seater)"),
 )
 
 @Composable
@@ -88,10 +87,6 @@ fun ProfileScreen(navController: NavController) {
     )
 
 
-    var context = LocalContext.current
-
-    val savedData = getMyDetails(context, "hostel")
-    val mySavedData by savedData.collectAsState(initial = "")
 
 
     Scaffold(
@@ -211,7 +206,7 @@ fun ProfileScreen(navController: NavController) {
                                         )
                                     )
                                     Text(
-                                        if (sectionDot.value == "null") "$mySavedData" else sectionDot.value,
+                                        sectionDot.value,
                                         fontFamily = Nunito,
                                         fontSize = 14.sp,
                                         fontWeight = FontWeight.Normal,
@@ -324,7 +319,7 @@ fun ProfileScreen(navController: NavController) {
                                     fontSize = 16.sp
                                 )
                                 Text(
-                                    if (item.value == "null") "$mySavedData" else item.value,
+                                    item.value,
                                     fontFamily = Nunito,
                                     fontWeight = FontWeight.Medium,
                                     fontSize = 16.sp

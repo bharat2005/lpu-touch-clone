@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.fir.expressions.builder.buildCatch
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -8,6 +10,14 @@ android {
     namespace = "com.example.lputouch"
     compileSdk = 36
 
+
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
+
+
     defaultConfig {
         applicationId = "com.example.lputouch"
         minSdk = 24
@@ -16,6 +26,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val uid: String? = project.findProperty("MY_UID") as? String
+        buildConfigField("String", "MY_UID", "\"$uid\"")
+
     }
 
     buildTypes {

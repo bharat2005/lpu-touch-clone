@@ -24,15 +24,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.lputouch.AppViewModal
 import com.example.lputouch.ui.features.auth.authGraph
-import com.example.lputouch.ui.features.camera.cameraGraph
-import com.example.lputouch.ui.features.camera.camera_screen.CameraScreen
 import com.example.lputouch.ui.features.general.generalGraph
 import com.example.lputouch.ui.features.main.mainGraph
-import com.example.lputouch.ui.features.mess.messGraph
 import com.example.lputouch.ui.features.notifications.notificationGraph
 import com.example.lputouch.ui.features.profile.profileGraph
 import com.example.lputouch.ui.features.residential.residentailGraph
-import com.example.lputouch.ui.features.settings.SettingsScreen
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -75,24 +71,8 @@ fun AppRoot(viewModal: AppViewModal) {
         profileGraph(navController)
         residentailGraph(navController)
         notificationGraph(navController)
-        messGraph(navController, viewModal)
 
 
-        composable("settings") { SettingsScreen(navController) }
-
-        composable(
-            route = "camera_screen/{food}",
-            enterTransition = {
-                slideInHorizontally(
-                    initialOffsetX = { fullWidth -> fullWidth },
-                    animationSpec = tween(200)
-                )
-            },
-        ) {
-                backStackEntry ->
-            val food = backStackEntry.arguments?.getString("food") ?: "food"
-            CameraScreen(navController, food, viewModal)
-        }
 
     }
 

@@ -49,7 +49,6 @@ fun OptionItem(tile: TileOption, navController: NavController) {
             .width(114.dp)
             .clickable(
                 onClick = {
-
                 },
                 indication = null,
                 interactionSource = remember { MutableInteractionSource() }

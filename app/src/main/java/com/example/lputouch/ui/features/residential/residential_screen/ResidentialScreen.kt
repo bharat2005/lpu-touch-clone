@@ -32,17 +32,15 @@ import kotlinx.coroutines.delay
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import com.example.lputouch.data.local.getMyDetails
 import com.example.lputouch.ui.components.LoadingOverlay.LoadingOverlay
+import com.example.lputouch.BuildConfig
 
 
 @ExperimentalMaterial3Api
 @Composable
 fun ResidentialScreen(navController: NavController) {
-    var context = LocalContext.current
 
-    val savedData = getMyDetails(context, "mess_name")
-    val mySavedData by savedData.collectAsState(initial = "")
+
 
 
 
@@ -54,6 +52,7 @@ fun ResidentialScreen(navController: NavController) {
         Column(
             modifier = Modifier.padding(paddingValues)
         ) {
+
             AndroidView(
                 modifier = Modifier.fillMaxSize().background(Color.White),
                 factory = {
@@ -63,29 +62,15 @@ fun ResidentialScreen(navController: NavController) {
                     webView.settings.javaScriptEnabled = true
 
                     webView.webViewClient = object : WebViewClient() {
-
                         override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
                             handler?.proceed()
                         }
 
-                        override fun onPageFinished(view: WebView, url: String) {
-                            super.onPageFinished(view, url)
-
-                            val script = """
-                    javascript:(function() {
-                        const messNameElement = document.getElementById('ctl00_cphHeading_lblMessName');
-                        if (messNameElement) {
-                            messNameElement.textContent = '${mySavedData}';
-                        }
-                    })();
-                """.trimIndent()
-                            view.evaluateJavascript(script, null)
-                        }
                     }
                     webView
                 },
                 update = { webView ->
-                    webView.loadUrl("https://ums.lpu.in/lpuums/frmResidentailReportingSlip.aspx?uid=R7uQGAvYTkri8strseeKjA%3D%3D")
+                    webView.loadUrl("https://ums.lpu.in/lpuums/frmResidentailReportingSlip.aspx?uid=${BuildConfig.MY_UID}")
                 }
             )
 
